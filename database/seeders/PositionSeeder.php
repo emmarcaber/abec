@@ -22,10 +22,10 @@ class PositionSeeder extends Seeder
             'Deputy Finance Officer',
             'Audit Commissioner',
             'Business Manager',
-            'Public Relations Officers',
+            'Public Relations Officer',
             'Cultural Coordinator',
             'Sports Coordinator',
-            'Deputy Ethical Standard Officers',
+            'Deputy Ethical Standards Officer',
             'Board of Directors',
         ];
 
