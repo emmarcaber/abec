@@ -39,9 +39,9 @@ class PositionSeeder extends Seeder
         $committeeOfficers = [
             'Assistant Secretary',
             'Assistant Finance Officer',
-            'Ways and Means Commitee',
+            'Ways and Means Committee',
             'Program Representative',
-            'Technical Team Commiteee',
+            'Technical Team Committee',
         ];
 
         foreach ($committeeOfficers as $co) {
