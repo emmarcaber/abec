@@ -18,10 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-Route::get('/officer_positions', function (Request $request) {
-    return response()->json(
-        Position::query()->select('id', 'officer_type', 'position')->get(),
-    );
-});
