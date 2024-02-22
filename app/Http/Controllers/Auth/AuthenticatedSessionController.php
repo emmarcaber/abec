@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+use function Symfony\Component\String\b;
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -31,7 +33,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $user_role = $request->user()->role;
+
+        switch ($user_role) {
+            case 'admin':
+                return redirect();
+            case 'user':
+                return redirect();
+            default:
+                break;
+        }
     }
 
     /**
