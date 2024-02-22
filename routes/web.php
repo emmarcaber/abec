@@ -37,7 +37,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->as('admin.')->group(
 
 Route::middleware(['auth', 'role:user'])->prefix('user')->as('user.')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('index');
+
     Route::get('/evaluations', [EvaluationController::class, 'index'])->name('evaluations.index');
+    Route::get('/evaluations/create', [EvaluationController::class, 'create'])->name('evaluations.create');
 });
 
 require __DIR__ . '/auth.php';

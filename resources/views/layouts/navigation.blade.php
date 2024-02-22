@@ -23,7 +23,7 @@
                         <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('user.evaluations.index')" :active="request()->routeIs('user.evaluations.index')">
+                        <x-nav-link :href="route('user.evaluations.index')" :active="request()->routeIs('user.evaluations.index', 'user.evaluations.create')">
                             {{ __('Evaluations') }}
                         </x-nav-link>
                     @endif

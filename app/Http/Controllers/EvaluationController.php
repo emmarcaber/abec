@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Position;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
 {
+
     /**
      * Display the evaluations listing.
      */
@@ -13,7 +15,20 @@ class EvaluationController extends Controller
     {
         if (auth()->user()->role === 'user') {
             return view('users.evaluations.index', [
-                'title' => 'ABEC - Evaluation',
+                'title' => 'Evaluation',
+            ]);
+        }
+    }
+
+    /**
+     * Show the form for creating new evaluation
+     */
+    public function create()
+    {
+        if (auth()->user()->role === 'user') {
+            return view('users.evaluations.create', [
+                'title' => 'Create Evaluation',
+                'officer_positions' => Position::select('id', 'officer_type', 'position')->get(),
             ]);
         }
     }

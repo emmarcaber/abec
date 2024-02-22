@@ -34,6 +34,8 @@
             {{ $slot }}
         </main>
     </div>
+
+    <script src="{{ asset('js/scripts.js') }}" type="module"></script>
 </body>
 
 </html>
