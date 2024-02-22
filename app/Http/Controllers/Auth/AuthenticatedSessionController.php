@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 use function Symfony\Component\String\b;
@@ -37,9 +38,9 @@ class AuthenticatedSessionController extends Controller
 
         switch ($user_role) {
             case 'admin':
-                return redirect(route('admin.index'));
+                return Redirect::route('admin.index')->with('success', 'You are logged in!');
             case 'user':
-                return redirect(route('user.index'));
+                return Redirect::route('user.index')->with('success', 'You are logged in!');
             default:
                 break;
         }
