@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comment_recomendations', function (Blueprint $table) {
+        Schema::create('comment_recommendations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->text('comments');
             $table->text('recommendations');
-            $table->decimal('rating', 1, 2);
+            $table->decimal('rating', 2, 2);
             $table->timestamps();
         });
     }
