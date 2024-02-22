@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->as('admin.')->group(
 
 Route::middleware(['auth', 'role:user'])->prefix('user')->as('user.')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/evaluations', [EvaluationController::class, 'index'])->name('evaluations.index');
 });
 
 require __DIR__ . '/auth.php';
