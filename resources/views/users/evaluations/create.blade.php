@@ -17,7 +17,7 @@
                         <!-- Position -->
                         <div class="">
                             <x-input-label for="name" :value="__('Position')" />
-                            <div class="ml-8 flex justify-center gap-4" id>
+                            <div class="ml-1 flex justify-start gap-4 my-2" id>
                                 <label for="executive_type"
                                     class="font-medium text-sm text-gray-700 dark:text-gray-300'">
                                     <input type="radio"
@@ -41,8 +41,7 @@
                         <!-- Comments -->
                         <div class="mt-4">
                             <x-input-label for="comments" :value="__('Comments')" />
-                            <x-text-area id="comments" class="block mt-1 w-full" name="comments" :value="old('comments')"
-                                required />
+                            <x-text-area id="comments" class="block mt-1 w-full" name="comments" :value="old('comments')" required />
                             <x-input-error :messages="$errors->get('comments')" class="mt-2" />
                         </div>
 
@@ -63,10 +62,13 @@
 
                         <div class="flex items-center justify-end mt-4">
 
+                            <x-cancel-button href="{{ route('user.evaluations.index') }}" class="ms-4">
+                                {{ __('Cancel') }}
+                            </x-cancel-button>
 
-                            <x-primary-button class="ms-4">
-                                {{ __('Evaluate') }}
-                            </x-primary-button>
+                            <x-create-button class="ms-4">
+                                {{ __('Create') }}
+                            </x-create-button>
                         </div>
                     </form>
                 </div>
