@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Position;
 use Illuminate\Http\Request;
 
@@ -25,10 +26,14 @@ class EvaluationController extends Controller
      */
     public function create()
     {
+        $officers_to_evaluate = User::select('users.id as user_id', 'position', 'name')
+            ->join('positions', 'positions.id', 'users.position_id')
+            ->orderBy('positions.id')->get();
+
         if (auth()->user()->role === 'user') {
             return view('users.evaluations.create', [
                 'title' => 'Create Evaluation',
-                'officer_positions' => Position::select('id', 'officer_type', 'position')->get(),
+                'officers_to_evaluate' => $officers_to_evaluate,
             ]);
         }
     }

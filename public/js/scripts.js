@@ -1,4 +1,10 @@
+const officersDropdown = document.querySelector("#position");
+const choice = new Choices(officersDropdown, {
+    shouldSort: false,
+});
+
 const officer_positions = $("#officer_positions").data("officer-positions");
+
 const executiveOfficers = officer_positions.filter(
     (op) => op.officer_type === "executive"
 );

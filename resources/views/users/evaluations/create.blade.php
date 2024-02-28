@@ -5,7 +5,6 @@
             {{ __('Create Evaluation') }}
         </h2>
     </x-slot>
-    <span class="hidden" id="officer_positions" data-officer-positions="{{ json_encode($officer_positions) }}"></span>
 
     <div class="py-12">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -16,25 +15,16 @@
 
                         <!-- Position -->
                         <div class="">
-                            <x-input-label for="name" :value="__('Position')" />
-                            <div class="ml-1 flex justify-start gap-4 my-2" id>
-                                <label for="executive_type"
-                                    class="font-medium text-sm text-gray-700 dark:text-gray-300'">
-                                    <input type="radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        id="executive_type" value="executive" name="officer_type" checked />
-                                    Executive</label>
-
-                                <label for="committee_type"
-                                    class="font-medium text-sm text-gray-700 dark:text-gray-300'">
-                                    <input type="radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        id="committee_type" value="committee" name="officer_type" />
-                                    Committee</label>
-                            </div>
+                            <x-input-label for="position" :value="__('Position')" />
 
                             <select id="position" name="position_id" required
                                 class="block w-full mt-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                <option placeholder selected>Select Position</option>
+                                @foreach ($officers_to_evaluate as $officer)
+                                    <option value="{{ $officer->user_id }}">
+                                        {{ $officer->position }} - {{ $officer->name }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
 
