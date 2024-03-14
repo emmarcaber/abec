@@ -1,10 +1,10 @@
-const officersDropdown = document.querySelector("#position");
+const officersDropdown = document.querySelector("#officersDropdown");
 
-// if (officersDropdown != null) {
-//     const choice = new Choices(officersDropdown, {
-//         shouldSort: false,
-//     });
-// }
+if (officersDropdown != null) {
+    const choice = new Choices(officersDropdown, {
+        shouldSort: false,
+    });
+}
 
 const officer_positions = $("#officer_positions").data("officer-positions");
 
