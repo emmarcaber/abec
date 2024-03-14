@@ -38,23 +38,23 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="ke_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="ke_excellent" name="knowledge_expertise" value="5" />
+                                    <input type="radio" id="ke_excellent" name="knowledge_expertise" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="ke_good" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="ke_good" name="knowledge_expertise" value="4" />
+                                    <input type="radio" id="ke_good" name="knowledge_expertise" value="4" required />
                                     Good
                                 </label>
                                 <label for="ke_OK" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="ke_OK" name="knowledge_expertise" value="3" />
+                                    <input type="radio" id="ke_OK" name="knowledge_expertise" value="3" required />
                                     OK
                                 </label>
                                 <label for="ke_fair" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="ke_fair" name="knowledge_expertise" value="2" />
+                                    <input type="radio" id="ke_fair" name="knowledge_expertise" value="2" required />
                                     Fair
                                 </label>
                                 <label for="ke_poor" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="ke_poor" name="knowledge_expertise" value="1" />
+                                    <input type="radio" id="ke_poor" name="knowledge_expertise" value="1" required />
                                     Poor
                                 </label>
                             </div>
@@ -70,23 +70,23 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="la_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="la_excellent" name="leadership_abilities" value="5" />
+                                    <input type="radio" id="la_excellent" name="leadership_abilities" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="la_good" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="la_good" name="leadership_abilities" value="4" />
+                                    <input type="radio" id="la_good" name="leadership_abilities" value="4" required />
                                     Good
                                 </label>
                                 <label for="la_OK" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="la_OK" name="leadership_abilities" value="3" />
+                                    <input type="radio" id="la_OK" name="leadership_abilities" value="3" required />
                                     OK
                                 </label>
                                 <label for="la_fair" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="la_fair" name="leadership_abilities" value="2" />
+                                    <input type="radio" id="la_fair" name="leadership_abilities" value="2" required />
                                     Fair
                                 </label>
                                 <label for="la_poor" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="la_poor" name="leadership_abilities" value="1" />
+                                    <input type="radio" id="la_poor" name="leadership_abilities" value="1" required />
                                     Poor
                                 </label>
                             </div>
@@ -102,23 +102,23 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="tc_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="tc_excellent" name="teamwork_collaboration" value="5" />
+                                    <input type="radio" id="tc_excellent" name="teamwork_collaboration" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="tc_good" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="tc_good" name="teamwork_collaboration" value="4" />
+                                    <input type="radio" id="tc_good" name="teamwork_collaboration" value="4" required />
                                     Good
                                 </label>
                                 <label for="tc_OK" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="tc_OK" name="teamwork_collaboration" value="3" />
+                                    <input type="radio" id="tc_OK" name="teamwork_collaboration" value="3" required />
                                     OK
                                 </label>
                                 <label for="tc_fair" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="tc_fair" name="teamwork_collaboration" value="2" />
+                                    <input type="radio" id="tc_fair" name="teamwork_collaboration" value="2" required />
                                     Fair
                                 </label>
                                 <label for="tc_poor" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="tc_poor" name="teamwork_collaboration" value="1" />
+                                    <input type="radio" id="tc_poor" name="teamwork_collaboration" value="1" required />
                                     Poor
                                 </label>
                             </div>
@@ -134,23 +134,23 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="wed_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_excellent" name="work_ethic_dedication" value="5" />
+                                    <input type="radio" id="wed_excellent" name="work_ethic_dedication" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="wed_good" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_good" name="work_ethic_dedication" value="4" />
+                                    <input type="radio" id="wed_good" name="work_ethic_dedication" value="4" required />
                                     Good
                                 </label>
                                 <label for="wed_OK" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_OK" name="work_ethic_dedication" value="3" />
+                                    <input type="radio" id="wed_OK" name="work_ethic_dedication" value="3" required />
                                     OK
                                 </label>
                                 <label for="wed_fair" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_fair" name="work_ethic_dedication" value="2" />
+                                    <input type="radio" id="wed_fair" name="work_ethic_dedication" value="2" required />
                                     Fair
                                 </label>
                                 <label for="wed_poor" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_poor" name="work_ethic_dedication" value="1" />
+                                    <input type="radio" id="wed_poor" name="work_ethic_dedication" value="1" required />
                                     Poor
                                 </label>
                             </div>
@@ -166,23 +166,23 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="octt_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_excellent" name="overall_contribution_to_team" value="5" />
+                                    <input type="radio" id="wed_excellent" name="overall_contribution_to_team" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="octt_good" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="octt_good" name="overall_contribution_to_team" value="4" />
+                                    <input type="radio" id="octt_good" name="overall_contribution_to_team" value="4" required />
                                     Good
                                 </label>
                                 <label for="octt_OK" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="octt_OK" name="overall_contribution_to_team" value="3" />
+                                    <input type="radio" id="octt_OK" name="overall_contribution_to_team" value="3" required />
                                     OK
                                 </label>
                                 <label for="octt_fair" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="octt_fair" name="overall_contribution_to_team" value="2" />
+                                    <input type="radio" id="octt_fair" name="overall_contribution_to_team" value="2" required />
                                     Fair
                                 </label>
                                 <label for="octt_poor" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="octt_poor" name="overall_contribution_to_team" value="1" />
+                                    <input type="radio" id="octt_poor" name="overall_contribution_to_team" value="1" required />
                                     Poor
                                 </label>
                             </div>
