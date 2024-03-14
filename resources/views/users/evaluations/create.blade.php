@@ -28,6 +28,38 @@
                             </select>
                         </div>
 
+                        <!-- Knowledge and Expertise -->
+                        <div class="mt-4">
+                            <x-input-label for="knowledge_expertise" :value="__('Knowledge and Expertise')" />
+                        
+                            <div class="text-md text-justify">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This criterion evaluates the individual's understanding and proficiency in their role or field. It assesses how well the individual applies their knowledge to tasks and stays updated on relevant information. Factors to consider include problem-solving skills, technical competence, and practical application of knowledge.
+                            </div>
+
+                            <div class="mt-2 flex justify-center items-center gap-24 text-md">
+                                <label for="ke_excellent" class="flex justify-center items-center gap-2">
+                                    <input type="radio" id="ke_excellent" name="knowledge_expertise" value="5" />
+                                    Excellent
+                                </label>
+                                <label for="ke_good" class="flex justify-center items-center gap-2">
+                                    <input type="radio" id="ke_good" name="knowledge_expertise" value="4" />
+                                    Good
+                                </label>
+                                <label for="ke_OK" class="flex justify-center items-center gap-2">
+                                    <input type="radio" id="ke_OK" name="knowledge_expertise" value="3" />
+                                    OK
+                                </label>
+                                <label for="ke_fair" class="flex justify-center items-center gap-2">
+                                    <input type="radio" id="ke_fair" name="knowledge_expertise" value="2" />
+                                    Fair
+                                </label>
+                                <label for="ke_poor" class="flex justify-center items-center gap-2">
+                                    <input type="radio" id="ke_poor" name="knowledge_expertise" value="1" />
+                                    Poor
+                                </label>
+                            </div>
+                        </div>
+
                         <!-- Comments -->
                         <div class="mt-4">
                             <x-input-label for="comments" :value="__('Comments')" />
