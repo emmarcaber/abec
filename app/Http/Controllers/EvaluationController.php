@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Position;
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -46,7 +47,6 @@ class EvaluationController extends Controller
      */
     public function store(Request $request) 
     {
-        dd($request->all());
         $formFields = $request->validate([
             'user_id' => 'required|exists:positions,id',
             'evaluated_officer_id' => 'required|exists:positions,id',
@@ -58,5 +58,9 @@ class EvaluationController extends Controller
             'comments' => 'required',
             'recommendations' => 'required',
         ]);
+
+        Evaluation::create($formFields);
+
+        return redirect(route('user.evaluations.index'))->with('success', 'Evaluation created successfully!');
     }
 }

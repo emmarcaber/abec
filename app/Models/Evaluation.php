@@ -14,5 +14,15 @@ class Evaluation extends Model
         return $this->belongsTo(User::class);
     }
 
-    
+    protected $fillable = [
+        'user_id',
+        'evaluated_officer_id',
+        'knowledge_expertise',
+        'leadership_abilities',
+        'teamwork_collaboration',
+        'work_ethic_dedication',
+        'overall_contribution_to_team',
+        'comments',
+        'recommendations',
+    ];
 }
