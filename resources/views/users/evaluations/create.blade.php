@@ -15,6 +15,8 @@
                         @csrf
                         @method('POST')
 
+                        <input type="hidden" name="user_id" value="{{ $user_id }}" />
+
                         <!-- Position -->
                         <div class="">
                             <x-input-label for="officersDropdown" :value="__('Position')" />
