@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Position::class);
     }
+
+    public function evaluations() : HasMany
+    {
+        return $this->hasMany(User::class);
+    }
 }
