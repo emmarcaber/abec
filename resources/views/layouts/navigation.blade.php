@@ -87,9 +87,21 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            @if (auth()->user()->role === 'admin')
+                <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                    {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('user.index')">
+                    {{ __('Evaluations') }}
+                </x-responsive-nav-link>
+            @elseif (auth()->user()->role === 'user')
+                <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                    {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('user.evaluations.index')" :active="request()->routeIs('user.evaluations.index', 'user.evaluations.create')">
+                    {{ __('Evaluations') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
