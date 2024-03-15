@@ -10,14 +10,16 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form method="POST" action="{{ route('register') }}">
+
+                    <form method="POST" action="{{ route('user.evaluations.store') }}">
                         @csrf
+                        @method('POST')
 
                         <!-- Position -->
                         <div class="">
                             <x-input-label for="officersDropdown" :value="__('Position')" />
 
-                            <select id="officersDropdown" name="position_id" required
+                            <select id="officersDropdown" name="evaluated_officer_id" required
                                 class="block w-full mt-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                 <option placeholder selected>Select Position</option>
                                 @foreach ($officers_to_evaluate as $officer)
@@ -166,7 +168,7 @@
 
                             <div class="mt-2 flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center md:gap-28 text-md">
                                 <label for="octt_excellent" class="flex justify-center items-center gap-2">
-                                    <input type="radio" id="wed_excellent" name="overall_contribution_to_team" value="5" required />
+                                    <input type="radio" id="octt_excellent" name="overall_contribution_to_team" value="5" required />
                                     Excellent
                                 </label>
                                 <label for="octt_good" class="flex justify-center items-center gap-2">
