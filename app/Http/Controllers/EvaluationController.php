@@ -22,7 +22,7 @@ class EvaluationController extends Controller
     }
 
     /**
-     * Show the form for creating new evaluation
+     * Show the form for creating new evaluation.
      */
     public function create()
     {
@@ -36,5 +36,13 @@ class EvaluationController extends Controller
                 'officers_to_evaluate' => $officers_to_evaluate,
             ]);
         }
+    }
+
+    /**
+     * Store the new evaluation to the database.
+     */
+    public function store(Request $request) 
+    {
+        dd($request->all());
     }
 }
