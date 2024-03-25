@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,8 +54,16 @@ class User extends Authenticatable
         return $this->belongsTo(Position::class);
     }
 
-    public function evaluations() : HasMany
+    public function evaluations(): HasMany
     {
         return $this->hasMany(Evaluation::class);
+    }
+
+    public function getOfficersToEvaluateByUser($userId): Collection
+    {
+        return $this->select('users.id as user_id', 'position', 'name')
+            ->join('positions', 'positions.id', 'users.position_id')
+            ->where('users.id', '!=', $userId)
+            ->orderBy('positions.id')->get();
     }
 }

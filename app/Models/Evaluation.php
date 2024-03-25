@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ class Evaluation extends Model
 {
     use HasFactory;
 
-    public function user() : BelongsTo 
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
@@ -26,4 +27,9 @@ class Evaluation extends Model
         'comments',
         'recommendations',
     ];
+
+    public function getEvaluationsByUser($userId): Collection
+    {
+        return $this->where('user_id', $userId)->get();
+    }
 }
