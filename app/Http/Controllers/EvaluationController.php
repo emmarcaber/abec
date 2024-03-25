@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EvaluationRequest;
-use App\Models\User;
-use App\Models\Position;
 use App\Models\Evaluation;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -13,13 +12,14 @@ class EvaluationController extends Controller
 
     protected $evaluationModel;
     protected $userModel;
-    protected $currentUserId;
-    protected $currentUserRole;
 
-    public function __construct()
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct(Evaluation $evaluationModel, User $userModel)
     {
-        $this->evaluationModel = new Evaluation();
-        $this->userModel = new User();
+        $this->evaluationModel = $evaluationModel;
+        $this->userModel = $userModel;
     }
 
     /**
@@ -27,42 +27,48 @@ class EvaluationController extends Controller
      */
     public function index(Request $request)
     {
-        $currentUserId = auth()->user()->id;
-        $currentUserRole = auth()->user()->role;
+        $currentUser = auth()->user();
 
-        if ($currentUserRole === 'user') {
+        if ($currentUser->role === 'user') {
+            $evaluations = $this->evaluationModel->getEvaluationsByUser($currentUser->id);
+
             return view('users.evaluations.index', [
                 'title' => 'Evaluation',
-                'evaluations' => $this->evaluationModel->getEvaluationsByUser($currentUserId),
+                'evaluations' => $evaluations,
             ]);
         }
+
+        // Handle other roles or return an error response
     }
 
     /**
-     * Show the form for creating new evaluation.
+     * Show the form for creating a new evaluation.
      */
     public function create()
     {
-        $currentUserId = auth()->user()->id;
-        $currentUserRole = auth()->user()->role;
+        $currentUser = auth()->user();
 
-        if ($currentUserRole === 'user') {
+        if ($currentUser->role === 'user') {
+            $officersToEvaluate = $this->userModel->getOfficersToEvaluateByUser($currentUser->id);
+
             return view('users.evaluations.create', [
                 'title' => 'Create Evaluation',
-                'officers_to_evaluate' => $this->userModel->getOfficersToEvaluateByUser($currentUserId),
-                'user_id' => $currentUserId,
+                'officers_to_evaluate' => $officersToEvaluate,
+                'user_id' => $currentUser->id,
             ]);
         }
+
+        // Handle other roles or return an error response
     }
 
     /**
-     * Store the new evaluation to the database.
+     * Store the new evaluation in the database.
      */
-    public function store(EvaluationRequest $evaluationRequest)
+    public function store(EvaluationRequest $request)
     {
-        Evaluation::create($evaluationRequest);
+        $this->evaluationModel->create($request->validated());
 
-        return redirect(route('user.evaluations.index'))
+        return redirect()->route('user.evaluations.index')
             ->with('success', 'Evaluation created successfully!');
     }
 }
