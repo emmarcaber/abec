@@ -15,9 +15,13 @@ class EvaluationController extends Controller
      */
     public function index(Request $request)
     {
+        $current_user_id = auth()->user()->id;
+        $evaluations = Evaluation::all()->where('user_id', $current_user_id);
+
         if (auth()->user()->role === 'user') {
             return view('users.evaluations.index', [
                 'title' => 'Evaluation',
+                'evaluations' => $evaluations,
             ]);
         }
     }
@@ -45,7 +49,7 @@ class EvaluationController extends Controller
     /**
      * Store the new evaluation to the database.
      */
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $formFields = $request->validate([
             'user_id' => 'required|exists:positions,id',
