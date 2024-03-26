@@ -67,4 +67,11 @@ class EvaluationController extends Controller
         return redirect()->route('user.evaluations.index')
             ->with('success', 'Evaluation created successfully!');
     }
+
+    /**
+     * Update the current evaluation in the database.
+     */
+    public function update(EvaluationRequest $request)
+    {
+    }
 }
