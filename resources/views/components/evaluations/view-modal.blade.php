@@ -1,5 +1,15 @@
 @props(['evaluation'])
 
+@php
+    $ratings = [
+        'Knowledge and Expertise' => $evaluation->knowledge_expertise,
+        'Leadership Abilities' => $evaluation->leadership_abilities,
+        'Teamwork and Collaboration' => $evaluation->teamwork_collaboration,
+        'Work Ethic and Dedication' => $evaluation->work_ethic_dedication,
+        'Overall Contribution to the Team' => $evaluation->overall_contribution_to_team,
+    ];
+@endphp
+
 <!-- Main modal -->
 <div id="view-modal-{{ $evaluation->id }}" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -30,11 +40,18 @@
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
 
-                <x-rating-progress :title="'Knowledge and Expertise'" :rating="$evaluation->knowledge_expertise" />
-                <x-rating-progress :title="'Leadership Abilities'" :rating="$evaluation->leadership_abilities" />
-                <x-rating-progress :title="'Teamwork and Collaboration'" :rating="$evaluation->teamwork_collaboration" />
-                <x-rating-progress :title="'Work Ethic and Dedication'" :rating="$evaluation->work_ethic_dedication" />
-                <x-rating-progress :title="'Overall Contribution to the Team'" :rating="$evaluation->overall_contribution_to_team" />
+                @foreach ($ratings as $title => $rating)
+                    <x-rating-progress :$title :$rating />
+                @endforeach
+
+                <!-- Comments -->
+                <div>
+                    <label class="text-sm font-medium text-gray-700 dark:text-white">Comments</label>
+                    <x-text-area :value="$evaluation->comments" :disabled='true' class="w-full text-sm resize-none" />
+
+                    <label class="text-sm font-medium text-gray-700 dark:text-white">Recommendations</label>
+                    <x-text-area :value="$evaluation->recommendations" :disabled='true' class="w-full text-sm resize-none" />
+                </div>
 
             </div>
         </div>
