@@ -12,8 +12,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <div class="mb-6 flex justify-between items-center">
-                        <div class="w-1/4">
-                            <form class="max-w-md mx-auto">
+                        <div class="sm:w-1/4 w-3/4">
+                            <form class="max-w-lg sm:max-w-md mx-auto">
                                 <label for="default-search"
                                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                                 <div class="relative">
@@ -31,8 +31,12 @@
                             </form>
                         </div>
                         <a href="{{ route('user.evaluations.create') }}"
-                            class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150'">
+                            class="hidden sm:inline-flex sm:items-center sm:px-4 sm:py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                             Create Evaluation
+                        </a>
+                        <a href="{{ route('user.evaluations.create') }}"
+                            class="md:hidden block sm:inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-md text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                            +
                         </a>
                     </div>
 
@@ -48,7 +52,7 @@
                                         Officer Name
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Ratings
+                                        Rating
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Actions
@@ -58,7 +62,7 @@
                             <tbody>
                                 @foreach ($evaluations as $evaluation)
                                     <tr
-                                        class="text-center
+                                        class="text-center align-middle
                                         bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                         <th scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -70,7 +74,8 @@
                                         <td class="px-6 py-4">
                                             {{ $evaluation->overall_rating }}
                                         </td>
-                                        <td class="px-6 py-4 flex justify-center gap-4">
+                                        <td
+                                            class="px-6 py-4 flex sm:flex-row flex-col justify-center items-center gap-4">
                                             <a href="#" class="font-medium text-cyan-600 dark:text-cyan-500">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
