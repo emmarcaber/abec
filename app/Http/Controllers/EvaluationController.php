@@ -37,8 +37,6 @@ class EvaluationController extends Controller
                 'evaluations' => $evaluations,
             ]);
         }
-
-        // Handle other roles or return an error response
     }
 
     /**
@@ -57,8 +55,6 @@ class EvaluationController extends Controller
                 'user_id' => $currentUser->id,
             ]);
         }
-
-        // Handle other roles or return an error response
     }
 
     /**
