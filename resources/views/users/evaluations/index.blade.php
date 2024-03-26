@@ -76,7 +76,9 @@
                                         </td>
                                         <td
                                             class="px-6 py-4 flex sm:flex-row flex-col justify-center items-center gap-4">
-                                            <a href="#" class="font-medium text-cyan-600 dark:text-cyan-500">
+                                            <button data-modal-target="view-modal-{{ $evaluation->id }}"
+                                                data-modal-toggle="view-modal-{{ $evaluation->id }}" type=button
+                                                class="font-medium text-cyan-600 dark:text-cyan-500">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                     class="w-6 h-6">
@@ -85,7 +87,7 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                                 </svg>
-                                            </a>
+                                            </button>
                                             <a href="#" class="font-medium text-amber-600 dark:text-amber-500">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -95,6 +97,8 @@
                                                 </svg>
                                             </a>
                                         </td>
+
+                                        <x-evaluations.view-modal :$evaluation />
                                     </tr>
                                 @endforeach
                             </tbody>
