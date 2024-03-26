@@ -30,11 +30,11 @@
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
 
-                <x-rating-progress :title="'Knowledge and Expertise'" />
-                <x-rating-progress :title="'Leadership Abilities'" />
-                <x-rating-progress :title="'Teamwork and Collaboration'" />
-                <x-rating-progress :title="'Work Ethic and Dedication'" />
-                <x-rating-progress :title="'Overall Contribution to the Team'" />
+                <x-rating-progress :title="'Knowledge and Expertise'" :rating="$evaluation->knowledge_expertise" />
+                <x-rating-progress :title="'Leadership Abilities'" :rating="$evaluation->leadership_abilities" />
+                <x-rating-progress :title="'Teamwork and Collaboration'" :rating="$evaluation->teamwork_collaboration" />
+                <x-rating-progress :title="'Work Ethic and Dedication'" :rating="$evaluation->work_ethic_dedication" />
+                <x-rating-progress :title="'Overall Contribution to the Team'" :rating="$evaluation->overall_contribution_to_team" />
 
             </div>
         </div>
