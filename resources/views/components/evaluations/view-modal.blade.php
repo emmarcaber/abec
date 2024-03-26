@@ -29,16 +29,13 @@
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its
-                    citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is
-                    meant to ensure a common set of data rights in the European Union. It requires organizations to
-                    notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
+
+                <x-rating-progress :title="'Knowledge and Expertise'" />
+                <x-rating-progress :title="'Leadership Abilities'" />
+                <x-rating-progress :title="'Teamwork and Collaboration'" />
+                <x-rating-progress :title="'Work Ethic and Dedication'" />
+                <x-rating-progress :title="'Overall Contribution to the Team'" />
+
             </div>
         </div>
     </div>
-</div>
