@@ -35,6 +35,8 @@
         </main>
     </div>
 
+    <x-flash-message />
+
     <script src="{{ asset('js/scripts.js') }}" type="module"></script>
     <script src="{{ asset('js/choices.min.js') }}"></script>
 </body>
