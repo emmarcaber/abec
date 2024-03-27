@@ -230,7 +230,7 @@
                 <!-- Comments -->
                 <div class="mt-4">
                     <x-input-label for="comments" :value="__('Comments')" />
-                    <x-text-area id="comments" class="block mt-1 w-full" name="comments" :value="old('comments')"
+                    <x-text-area id="comments" class="block mt-1 w-full" name="comments" :value="$evaluation->comments"
                         required />
                     <x-input-error :messages="$errors->get('comments')" class="mt-2" />
                 </div>
@@ -239,7 +239,7 @@
                 <div class="mt-4">
                     <x-input-label for="recommendations" :value="__('Recommendations')" />
                     <x-text-area id="recommendations" class="block mt-1 w-full" name="recommendations"
-                        :value="old('recommendations')" required />
+                        :value="$evaluation->recommendations" required />
                     <x-input-error :messages="$errors->get('recommendations')" class="mt-2" />
                 </div>
 
