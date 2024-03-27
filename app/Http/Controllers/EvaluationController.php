@@ -69,6 +69,14 @@ class EvaluationController extends Controller
     }
 
     /**
+     * Show the form for editing an existing evaluation.
+     */
+    public function edit(Request $request, Evaluation $evaluation)
+    {
+        $current_user = auth()->user();
+    }
+
+    /**
      * Update the current evaluation in the database.
      */
     public function update(EvaluationRequest $request)

@@ -40,6 +40,7 @@ Route::middleware(['auth', 'role:user'])->prefix('user')->as('user.')->group(fun
 
     Route::get('/evaluations', [EvaluationController::class, 'index'])->name('evaluations.index');
     Route::get('/evaluations/create', [EvaluationController::class, 'create'])->name('evaluations.create');
+    Route::get('/evaluations/edit/{evaluation}', [EvaluationController::class, 'edit'])->name('evaluations.edit');
     Route::post('/evaluations/store', [EvaluationController::class, 'store'])->name('evaluations.store');
 });
 
